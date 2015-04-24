@@ -96,9 +96,10 @@ public class EmployeeDAO {
     			 + Integer.toString(employee.getEmpId()) +","    
     			 + employee.getEmpName() +","
     			 + dateformatyyyyMMdd.format(employee.getDob()) +","
+                         //+ employee.getDob() +","
     			 + Double.toString(employee.getSalary()) +","
     			 + Integer.toString(employee.getDeptId()) 
-    			 + ")"
+    			 +")"
     			;
     	
         ResultSet rs = null;
