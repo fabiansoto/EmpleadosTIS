@@ -6,6 +6,8 @@ package ejemploempleado;
 
 import com.theopentutorials.jdbc.dao.EmployeeDAO;
 import demo.demo1;
+//import demo.formulario;
+import demo.datosEmpleados;
 import java.sql.SQLException;
 
 /**
@@ -19,7 +21,8 @@ public class EjemploEmpleado {
      */
     public static void main(String[] args) throws SQLException {
         EmployeeDAO empDAO = new EmployeeDAO();
-        demo1 dem = new demo1();
-        dem.demo1();
+       demo1 dem = new demo1();
+       dem.demo1();
+       //datosEmpleados form = new datosEmpleados();
     }
 }

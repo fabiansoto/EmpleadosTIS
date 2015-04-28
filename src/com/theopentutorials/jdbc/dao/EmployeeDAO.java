@@ -18,6 +18,7 @@ import com.theopentutorials.jdbc.to.Employee;
 import demo.demo1;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -76,11 +77,12 @@ public class EmployeeDAO {
         }
         return list;
     }
-    
+    public java.sql.Date convertJavaDateToSqlDate(java.util.Date date) { return new java.sql.Date(date.getTime()); }
     //
     // Insert employee
     public void insertEmployee (Employee employee) throws SQLException {
         SimpleDateFormat dateformatyyyyMMdd = new SimpleDateFormat("yyyyMMdd");
+        Date dat = new Date();
         //String date_to_string = dateformatyyyyMMdd.format(dateNow);
 
     	//String query = "SELECT * FROM employee";
@@ -90,13 +92,15 @@ public class EmployeeDAO {
         //        "VALUES (100, 'Zara', 'Ali', 18)";
   
    
-    	
-    	String query = "INSERT INTO empleado" +
-    			 "VALUES ("
-    			 + Integer.toString(employee.getEmpId()) +","    
-    			 + employee.getEmpName() +","
-    			 + dateformatyyyyMMdd.format(employee.getDob()) +","
-                         //+ employee.getDob() +","
+    	//String query = "INSERT INTO empleado" + " VALUES (1,'Ricardito',null,250,1)";    
+        dat = this.convertJavaDateToSqlDate(employee.getDob());
+        System.out.println("cambiada "+dat);
+        
+    	String query = "INSERT INTO empleado" + " VALUES ("
+                         + Integer.toString(employee.getEmpId()) +",'"    
+    			 + employee.getEmpName() +"','"
+    			 //+ dateformatyyyyMMdd.format(employee.getDob()) +","
+                         + dat +"',"
     			 + Double.toString(employee.getSalary()) +","
     			 + Integer.toString(employee.getDeptId()) 
     			 +")"
