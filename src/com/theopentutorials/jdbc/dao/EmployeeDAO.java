@@ -94,8 +94,7 @@ public class EmployeeDAO {
    
     	//String query = "INSERT INTO empleado" + " VALUES (1,'Ricardito',null,250,1)";    
         dat = this.convertJavaDateToSqlDate(employee.getDob());
-        System.out.println("cambiada "+dat);
-        
+        //System.out.println("cambiada "+dat);
     	String query = "INSERT INTO empleado" + " VALUES ("
                          + Integer.toString(employee.getEmpId()) +",'"    
     			 + employee.getEmpName() +"','"
@@ -105,7 +104,7 @@ public class EmployeeDAO {
     			 + Integer.toString(employee.getDeptId()) 
     			 +")"
     			;
-    	
+    	System.out.println("Ingresado "+employee.getEmpName());
         ResultSet rs = null;
         try {
             connection = ConnectionFactory.getConnection();

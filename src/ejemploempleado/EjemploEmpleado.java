@@ -21,8 +21,8 @@ public class EjemploEmpleado {
      */
     public static void main(String[] args) throws SQLException {
         EmployeeDAO empDAO = new EmployeeDAO();
-       demo1 dem = new demo1();
-       dem.demo1();
-       //datosEmpleados form = new datosEmpleados();
+       //demo1 dem = new demo1();
+       //dem.demo1();
+       datosEmpleados form = new datosEmpleados();
     }
 }
